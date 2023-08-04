@@ -1,4 +1,4 @@
-specVersion: "2.6"
+specVersion: "3.0"
 metadata:
   name: managetravels
 type: application
@@ -12,6 +12,19 @@ server:
         debug: true
         excludePatterns:
           - /Component-preload.js
+    - name: preview-middleware
+      afterMiddleware: compression
+      configuration:
+        flp:
+          path: /test/flpSandbox.html
+    - name: ui5-proxy-middleware
+      afterMiddleware: preview-middleware
+      configuration:
+        ui5:
+          - path: /resources
+            url: https://ui5.sap.com
+          - path: /test-resources
+            url: https://ui5.sap.com
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task

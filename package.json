@@ -2,12 +2,12 @@
   "name": "ui5con2023",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^6.8.2",
+    "@sap/cds": "^7",
     "express": "^4"
   },
   "devDependencies": {
     "sqlite3": "^5",
-    "cds-plugin-ui5": "^0.1.4"
+    "cds-plugin-ui5": "^0.2.1"
   },
   "scripts": {
     "start": "cds-serve",
